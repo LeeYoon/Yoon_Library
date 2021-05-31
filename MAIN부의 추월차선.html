@@ -6,12 +6,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <input type="button" value="night" onclick="
+  var target = document.querySelector('body');
+  if(this.value === 'night'){
+    target.style.backgroundColor = 'black';
+    target.style.color = 'white';
+    this.value = 'day';
+  } else {
+    target.style.backgroundColor = 'white';
+    target.style.color = 'black';
+    this.value = 'night';
+  }
+  ">
   <div id="container">
     <div>
       <h1>서재</h1>
     </div>
   <div id="grid">
-    <div>
+    <div class="content">
       <ul>
         <li><a href="부의 추월차선.html" class="see">부의 추월차선 </a></li>
         <li><a>성공하는 사람들의 7가지 습관</a></li>
