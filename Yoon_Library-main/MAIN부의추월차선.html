@@ -4,31 +4,42 @@
   <title>서재</title>
   <mate charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script>
+    function LinksSetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = color;
+        i = i + 1;
+      }
+    }
+    function BodySetColor(color){
+      document.querySelector('body').style.color = color;
+    }
+    function BodySetBackgroundColor(color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
+    function NightDayHandler(self){
+      var target = document.querySelector('body');
+      if(self.value === 'night'){
+        BodySetColor('white');
+        BodySetBackgroundColor('black');
+        self.value = 'day';
+
+        LinksSetColor('powderblue');
+      } else {
+        BodySetColor('black')
+        BodySetBackgroundColor('white');
+        self.value = 'night';
+
+        LinksSetColor('green');
+      }
+    }
+  </script>
 </head>
 <body>
   <input type="button" value="night" onclick="
-  var target = document.querySelector('body');
-  if(this.value === 'night'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    this.value = 'day';
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = 'powderblue';
-      i = i + 1;
-    }
-  } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.value = 'night';
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = 'blue';
-      i = i + 1;
-    }
-  }
+  NightDayHandler(this);
   ">
   <div id="container">
     <div>
@@ -43,7 +54,7 @@
         <script>
           var i = 0;
           while(i < list.length){
-            document.write('<li><a href="file:///C:/Users/CKIRUser/Desktop/Yoon_Library-main/MAIN'+list[i]+'.html">'+list[i]+'</a></li>');
+            document.write('<li><a href="file:///C:/Users/CKIRUser/Desktop/Yoon_Library-main/Yoon_Library-main/MAIN'+list[i]+'.html">'+list[i]+'</a></li>');
             i = i + 1 ;
         }
         </script>
