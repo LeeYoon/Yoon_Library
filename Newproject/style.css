@@ -1,0 +1,25 @@
+#container {
+  width:1200px;
+  margin:auto;
+
+}
+#grid {
+  display:grid;
+  grid-template-rows: 46px 1fr;
+}
+body {
+  margin:0;
+}
+#banner {
+  display:grid;
+  background-color: gray;
+  height : 42px;
+  margin : 0;
+}
+#banner .header {
+  display:grid;
+  width:1200px;
+  margin:auto;
+  background-color: gray;
+  grid-template-columns:80px 100px 100px 100px 100px 1fr 80px 100px 42px 42px 42px;
+}
